@@ -8,11 +8,11 @@
 
 **SmartCart** is a growing e-commerce platform with a global customer base. Currently, the company uses generic marketing strategies that fail to address the specific needs of different user groups, leading to inefficient marketing and potential customer churn.
 
-This project implements an **Intelligent Customer Segmentation System** using unsupervised machine learning. By analyzing customer demographics, purchase history, and website activity, we cluster users into distinct segments. [cite_start]This allows the marketing team to deliver personalized campaigns, improve customer retention, and identify high-value shoppers[cite: 18, 22, 23, 24].
+This project implements an **Intelligent Customer Segmentation System** using unsupervised machine learning. By analyzing customer demographics, purchase history, and website activity, we cluster users into distinct segments. This allows the marketing team to deliver personalized campaigns, improve customer retention, and identify high-value shoppers.
 
 ## 📂 Dataset Description
 
-The dataset comprises **2,240 customer records** with **22 attributes**[cite: 21, 28].
+The dataset comprises **2,240 customer records** with **22 attributes**.
 
 | Feature Category | Key Attributes |
 | :--- | :--- |
