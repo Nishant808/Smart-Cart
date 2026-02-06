@@ -12,7 +12,7 @@ This project implements an **Intelligent Customer Segmentation System** using un
 
 ## 📂 Dataset Description
 
-[cite_start]The dataset comprises **2,240 customer records** with **22 attributes**[cite: 21, 28].
+The dataset comprises **2,240 customer records** with **22 attributes**[cite: 21, 28].
 
 | Feature Category | Key Attributes |
 | :--- | :--- |
