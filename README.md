@@ -66,7 +66,3 @@ This project implements an **Intelligent Customer Segmentation System** using un
 
 * Integration of a recommendation engine for specific clusters.
 * Deployment of a dashboard using Streamlit for real-time customer analysis.
-* Comparison with other algorithms like DBSCAN or Hierarchical Clustering.
-
----
-*Developed by [Your Name]*
