@@ -1,68 +1,52 @@
-# 🛒 SmartCart Customer Segmentation System
+# 🛒 SmartCart: Advanced Customer Segmentation Dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-KMeans-green)
-![Status](https://img.shields.io/badge/Status-Completed-orange)
+![Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B)
+![Machine Learning](https://img.shields.io/badge/Algorithms-KMeans%20%26%20Agglomerative-green)
+![Status](https://img.shields.io/badge/Status-Deployed-success)
 
 ## 📌 Project Overview
+**SmartCart** is an Intelligent Customer Segmentation Dashboard designed to transform raw e-commerce data into actionable marketing intelligence. By moving beyond generic strategies, this system uses unsupervised machine learning to uncover hidden patterns in customer behavior.
 
-**SmartCart** is a growing e-commerce platform with a global customer base. Currently, the company uses generic marketing strategies that fail to address the specific needs of different user groups, leading to inefficient marketing and potential customer churn.
+Unlike static analysis, this tool provides an **interactive interface** where stakeholders can compare different clustering algorithms (K-Means vs. Agglomerative) and visualize high-dimensional data in 3D.
 
-This project implements an **Intelligent Customer Segmentation System** using unsupervised machine learning. By analyzing customer demographics, purchase history, and website activity, we cluster users into distinct segments. This allows the marketing team to deliver personalized campaigns, improve customer retention, and identify high-value shoppers.
-
-## 📂 Dataset Description
-
-The dataset comprises **2,240 customer records** with **22 attributes**.
-
-| Feature Category | Key Attributes |
-| :--- | :--- |
-| **Demographics** | `Year_Birth`, `Education`, `Marital_Status`, `Income`, `Kidhome`, `Teenhome` |
-| **Purchase History** | `MntWines`, `MntFruits`, `MntMeatProducts`, `MntFishProducts`, `MntSweetProducts`, `MntGoldProds` |
-| **Engagement** | `NumWebPurchases`, `NumStorePurchases`, `NumDealsPurchases`, `NumWebVisitsMonth` |
-| **Loyalty** | `Dt_Customer` (Enrollment Date), `Recency` (Days since last purchase) |
+## 🌟 Key Features
+* **Dual-Model Comparison:** Compare K-Means and Agglomerative Clustering side-by-side.
+* **Interactive 3D Visuals:** Explore clusters in 3D space using PCA (Principal Component Analysis).
+* **Automated Optimal K Discovery:** Built-in Elbow Method and Silhouette Analysis using `KneeLocator`.
+* **Segment Profiling Tab:** * **Radar Charts:** Visualize the "DNA" of each segment across all normalized metrics.
+    * **Plotly Heatmaps:** Spot high-value traits across clusters with overlaid raw data annotations.
+    * **Distribution Tracking:** Monitor the size of each customer group with interactive bar charts.
 
 ## 🛠️ Tech Stack
-
-* **Language:** Python
+* **Frontend/App:** Streamlit
 * **Data Manipulation:** Pandas, NumPy
-* **Visualization:** Matplotlib, Seaborn
-* **Machine Learning:** Scikit-Learn (K-Means Clustering)
-* **Environment:** Jupyter Notebook
+* **Visualization:** Plotly (Interactive), Seaborn, Matplotlib
+* **Machine Learning:** Scikit-Learn (K-Means, Agglomerative, PCA, StandardScaler, OneHotEncoder)
+* **Optimization:** Kneed (Automated Elbow Detection)
 
 ## 📊 Methodology
 
-1.  **Data Preprocessing**:
-    * **Missing Values:** Imputed missing `Income` values using the median.
-    * **Date Handling:** Converted `Dt_Customer` to datetime format.
-    * **Outlier Removal:** Filtered illogical records (e.g., Age > 90, Income > 600k).
-2.  **Feature Engineering**:
-    * **Age**: Calculated from `Year_Birth`.
-    * **Customer Tenure**: Derived from `Dt_Customer` relative to the most recent dataset date.
-    * **Total Spending**: Aggregated spending across all product categories.
-    * **Total Children**: Combined `Kidhome` and `Teenhome`.
-    * **Family Structure**: Simplified `Marital_Status` into "Partner" vs. "Alone" and mapped `Education` levels.
-3.  **Exploratory Data Analysis (EDA)**:
-    * **Correlation Matrix:** Visualized relationships between income and spending habits.
-    * **Pairplots:** Analyzed distributions and potential cluster separations.
-4.  **Clustering**:
-    * Applied **K-Means Clustering** to group customers based on spending and engagement patterns.
+### 1. Data Engineering & Cleaning
+* **Imputation:** Handled missing `Income` values via median imputation.
+* **Outlier Control:** Filtered illogical records (Age > 90, Income > $600k).
+* **Feature Extraction:** * `Age`: Derived from birth year relative to 2026.
+    * `Total Spending`: Aggregated across all product categories (Wines, Fruits, Meat, etc.).
+    * `Tenure`: Calculated customer loyalty duration from the enrollment date.
+    * `Family Structure`: Simplified marital status and mapped education levels for cleaner encoding.
 
-## 🚀 How to Run
+### 2. Dimensionality Reduction
+To visualize 20+ attributes in a 3D dashboard, we utilized **PCA (Principal Component Analysis)** to reduce the feature set to three principal components that capture the maximum variance in customer behavior.
 
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/yourusername/smartcart-clustering.git](https://github.com/yourusername/smartcart-clustering.git)
-    ```
-2.  Install dependencies:
-    ```bash
-    pip install pandas matplotlib seaborn scikit-learn
-    ```
-3.  Open the notebook:
-    ```bash
-    jupyter notebook smart_cart.ipynb
-    ```
+### 3. Clustering Logic
+* **K-Means:** Partitioning based on centroids.
+* **Agglomerative:** Hierarchical clustering using 'ward' linkage to identify nested segments.
 
-## 🔮 Future Scope
 
-* Integration of a recommendation engine for specific clusters.
-* Deployment of a dashboard using Streamlit for real-time customer analysis.
+
+## 🚀 Installation & Usage
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/yourusername/smartcart-clustering.git](https://github.com/yourusername/smartcart-clustering.git)
+   cd smartcart-clustering
